@@ -102,15 +102,28 @@ Fuck Doenerium6969 ! 🖕
 
 <b><a id="proofs">🔮 〢 Proofs</a></b>
 
-<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/atomic_wallet_dualhook_screenshot_proof.png" width="720" height="360"> <img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/exodus_wallet_dualhook_screenshot_proof.png" width="720" height="360">
+<p><b>The code only works if you have Steam Game installed</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/work_only_if_you_have_steam_in_your_computer.png" width="720" height="360"> 
 
-<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/new_atomic_injection_code.png" width="720" height="360"> <img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/new_exodus_injection_code.png" width="720" height="360">
+<p><b>Old Atomic code (Dualhooked)</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/atomic_wallet_dualhook_screenshot_proof.png" width="720" height="360"> 
+<p><b>Old Exodus code (Dualhooked)</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/exodus_wallet_dualhook_screenshot_proof.png" width="720" height="360">
 
+<p><b>New Atomic code (send to Telegram)</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/new_atomic_injection_code.png" width="720" height="360"> 
+<p><b>New Exodus code (send to Telegram)</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/new_exodus_injection_code.png" width="720" height="360">
 
-<img src="" width="720" height="360">
+<p><b>Old clipper addresses</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/old_crypto_addresses.png" width="720" height="360">
+<p><b>New clipper addresses</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/replace_crypto_address.png" width="720" height="360">
 
-<img src="" width="720" height="360">
-
+<p><b>In the old code it sends information to 2 Webhooks out of 10 functions in the source code</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/send_to_2_webhook_in_10_fonctions.png" width="720" height="360">
+<p><b>But in the new one I removed the second Webhook</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/new_1_webhook_code_remade.png" width="720" height="360">
 
 <b><a id="todo">📝 〢 Todo</a></b>
 
