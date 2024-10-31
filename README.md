@@ -25,6 +25,7 @@ Fuck Doenerium6969 ! 🖕
 - [📁 Setting up](#setup)
 - [⚔️ Features](#features)
 - [📸 Screenshots](#screenshot)
+- [🔮 Proofs](#proofs)
 - [📝 Todo](#todo)
 - [📜 License](#license)
 - [⚠️ Note](#note)
@@ -46,50 +47,43 @@ Fuck Doenerium6969 ! 🖕
 <b><a id="features">⚔️ 〢 Features</a></b>
 
 ```
-> No Dependent Clipper (exe does not need to stay running for the clipper to work)
-> Wallet Injection 12words + passwords [ Exodus, Atomic ]
-> Percistance Hidden Startup + if reg get deleted = auto come back :)
-> Files Stealer [.txt, .doc, .docx, .rdp, .pdf and more]
-> Binder, will add exclusion to your file to bypass defender.
-> Discord Token, Friends with rare badges, Credit card
-> Discord Info - Username, Phone number, Email, Billing, Nitro Status & Backup Codes
-> Discord About Me changer, HQ Guilds Admin/Owner
-> Steal Backup 2FA Code [ Discord, Epic Games, Github ]
-> Grabs crypto wallets -
-> 💸 Zcash
-> 🚀 Armory
-> 📀 Bytecoin
-> 💵 Jaxx
-> 💎 Exodus
-> 📉 Ethereum
-> 🔨 Electrum
-> 🕹️ AtomicWallet
-> 💹 Guarda
-> ⚡ Coinomi
-> 🦊 MetaMask
-> Browser (Chrome, Opera, Firefox, OperaGX, Edge, Brave, Yandex)
-> Passwords, Cookies, Autofill & History (Searches for specific keywords such as PayPal, Coinbase etc. in them)
-> Screenshots all screen
-> Telegram Session stealer
-> Riot Games Session stealer
-> FTP stealer (FileZilla)
-> VPN Stealer
-> Growtopia Stealer
-> Minecraft Session stealer & validator
-> Instagram Session stealer & validator
-> Roblox Session stealer & validator
-> Steam Session stealer & validator
-> TikTok Session stealer & validator
-> Twitter Session stealer & validator
-> Reddit Session stealer & validator
-> Epic Games Launcher Session stealer
-> Internet connection check every 3 seconds before it starts stealing
-> Ultra Obfuscation (use https://obfuscator.io)
-> Disable UAC / Anti-Debug / Anti-VM / Blue Screen if detect
-> No Traces and silent
-> Validates a found discord token and then sends it to your discord webhook
-> Sends all files to your discord webhook in beautiful embeds and a structured zip file
-> Automatic obfuscation when building (12 sec to build exe | 30-40mb)
+!Wallets
+- Extension (MetaMask, Coinbase, BinanceChain, Phantom, Ronin, Exodus, Authenticator, Guarda, Jaxx, KardiaChain, Nami, TON, Keplr, CryptoCom, Atomic, Yoroi)
+- Desktop (Zcash, Armory, Bytecoin, Jaxx, Exodus, Ethereum, Electrum, Atomic, Guarda, Coinomi)
+- Injection (Atomic, Exodus)
+- Clipper
+
+!Browsers
+- Chromium (Chrome, Opera, OperaGX, Edge, Brave, Yandex)[Passwords, Cookies, Autofills, Historys]
+
+!Messengers
+- Discord (Account / Injection)
+- Telegram
+
+!Sessions
+- Instagram
+- Twitter
+- Roblox
+- TikTok
+- Reddit
+
+!FTP Clients
+- Filezilla
+
+!Games
+- Epic Games
+- Riot Games
+- Growtopia
+- Minecraft
+
+!Other
+- Startup (Task Manager, Persistent, Registry["If the registry entry gets deleted, it automatically comes back."])
+- Anti (Virtual Machine, Debugger, Viruses Sites)
+- Files (Important files, 2FA backup codes)
+- Obfuscation (https://obfuscator.io)
+- Disable UAC
+- Screenshot
+- Binder
 ```
 
 <b><a id="screenshot">📸 〢 Screenshots</a></b>
@@ -106,6 +100,16 @@ Fuck Doenerium6969 ! 🖕
 <img title="" src="https://media.discordapp.net/attachments/994591063253733407/1218385666837319803/Screenshot_13.png?ex=67239453&is=672242d3&hm=cc7acae4df8270e762452879dd2ea13ad4343dcd2e662a7c26601a6f2e39e071&" alt="" width="720" height="360">
 <img title="" src="https://cdn.discordapp.com/attachments/660885288079589385/1206900306638540830/Screenshot_6.png?ex=6723fbc0&is=6722aa40&hm=8a351f366943c014ba070cd03a6088fe8f454892a0e5c59d6fb828e7ae6b4aba&" alt="" width="720" height="360">
 
+<b><a id="proofs">🔮 〢 Proofs</a></b>
+
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/atomic_wallet_dualhook_screenshot_proof.png" width="720" height="360"> <img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/exodus_wallet_dualhook_screenshot_proof.png" width="720" height="360">
+
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/new_atomic_injection_code.png" width="720" height="360"> <img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/new_exodus_injection_code.png" width="720" height="360">
+
+
+<img src="" width="720" height="360">
+
+<img src="" width="720" height="360">
 
 
 <b><a id="todo">📝 〢 Todo</a></b>
