@@ -12,9 +12,9 @@ Fuck Doenerium6969 ! 🖕
 
 
 <p align="center">
-<img src="https://img.shields.io/github/last-commit/doenerium6969/doenerium-fixed?style=flat">
-<img src="https://img.shields.io/github/stars/doenerium69/doenerium?color=brightgreen">
-<img src="https://img.shields.io/github/forks/doenerium69/doenerium?color=brightgreen">
+<img src="https://img.shields.io/github/last-commit/JohnDoe287/doenerium9696?style=flat">
+<img src="https://img.shields.io/github/stars/JohnDoe287/doenerium9696?color=brightgreen">
+<img src="https://img.shields.io/github/forks/JohnDoe287/doenerium9696?color=brightgreen">
 </p>
 <br>
 
