@@ -119,13 +119,12 @@ Fuck Doenerium6969 ! 🖕
 for more requests join the Telegram channel
 ```
 
-<b>📜 〢 License</b>
+<b><a id="license">📜 〢 License</a></b>
 
 By downloading this, you agree to the Commons Clause license and that you're not allowed to sell this repository or any code from this repository. For more info see [commonsclause](https://commonsclause.com/)
 
-<a id="note"></a>
 
 
-<b>⚠️ 〢 Note</b>
+<b><a id="note">⚠️ 〢 Note</a></b>
 
 I am not responsible for any damages this software may cause after being acquired. This software was made for personal education and sandbox testing.
