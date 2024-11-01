@@ -22,7 +22,7 @@ Fuck Doenerium69 ! 🖕
 - [🔮 Proofs](#proofs)
 - [📁 Setting up](#setup)
 - [⚔️ Features](#features)
-- [⚙️ Change Logs](#changlogs)
+- [⚙️ Change Logs](#changelogs)
 - [📸 Screenshots](#screenshot)
 - [📝 Todo](#todo)
 - [📜 License](#license)
