@@ -9,8 +9,6 @@ Fuck Doenerium69 ! 🖕
   </kbd>
 </p>
 
-
-
 <p align="center">
 <img src="https://img.shields.io/github/last-commit/JohnDoe287/doenerium9696?style=flat">
 <img src="https://img.shields.io/github/stars/JohnDoe287/doenerium9696?color=brightgreen">
@@ -21,15 +19,14 @@ Fuck Doenerium69 ! 🖕
 <p>I am changing the readme to better explain</p>
 
 <b>🌐 〢 Content</b>
-
 - [🔮 Proofs](#proofs)
 - [📁 Setting up](#setup)
 - [⚔️ Features](#features)
+- [⚙️ Change Logs](#changlogs)
 - [📸 Screenshots](#screenshot)
 - [📝 Todo](#todo)
 - [📜 License](#license)
 - [⚠️ Note](#note)
-
 
 <b><a id="proofs">🔮 〢 Proofs</a></b>
 
@@ -110,6 +107,17 @@ Fuck Doenerium69 ! 🖕
 - Binder
 ```
 
+<b><a id="changelogs">⚙️ 〢 Change Logs</a></b>
+```
+v1.0 Removed all Dualhook
+v1.1 Replaced Discord sending with Telegram in Atomic and Exodus
+v1.2 Improved README
+v1.3 Minimized the code
+v1.4 Removed the least used wallet extensions
+v1.5 Started to change some function that send embeds to discord by sending to telegram
+v1.6 Added more Minecraft launcher (Mojang, Lunar, Badilon, ATLauncher, Tlauncher, MultiMC, CurseForge, Technic)
+```
+
 <b><a id="screenshot">📸 〢 Screenshots</a></b>
 
 <img title="" src="https://cdn.discordapp.com/attachments/1199547023398010950/1286508649233256529/image.png?ex=671afd0c&is=6719ab8c&hm=0cfc91f4ecb8c833c08cb4166ccf975c3a66906b4944855e399297751e1412fe&" alt="" width="720" height="360">
@@ -123,7 +131,6 @@ Fuck Doenerium69 ! 🖕
 <img title="" src="https://media.discordapp.net/attachments/994591063253733407/1218381947546501191/Screenshot_11.png?ex=6720eddc&is=671f9c5c&hm=5627c51d2e00e369ae46e8789e12817a841e1c19bf3d15d52b352bb46537e1e9&" alt="" width="720" height="360">
 <img title="" src="https://media.discordapp.net/attachments/994591063253733407/1218385666837319803/Screenshot_13.png?ex=67239453&is=672242d3&hm=cc7acae4df8270e762452879dd2ea13ad4343dcd2e662a7c26601a6f2e39e071&" alt="" width="720" height="360">
 <img title="" src="https://cdn.discordapp.com/attachments/660885288079589385/1206900306638540830/Screenshot_6.png?ex=6723fbc0&is=6722aa40&hm=8a351f366943c014ba070cd03a6088fe8f454892a0e5c59d6fb828e7ae6b4aba&" alt="" width="720" height="360">
-
 
 <b><a id="todo">📝 〢 Todo</a></b>
 
@@ -139,11 +146,7 @@ for more requests join the Telegram channel
 ```
 
 <b><a id="license">📜 〢 License</a></b>
-
 By downloading this, you agree to the Commons Clause license and that you're not allowed to sell this repository or any code from this repository. For more info see [commonsclause](https://commonsclause.com/)
 
-
-
 <b><a id="note">⚠️ 〢 Note</a></b>
-
 I am not responsible for any damages this software may cause after being acquired. This software was made for personal education and sandbox testing.
